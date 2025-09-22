@@ -6,6 +6,13 @@ const inputName = document.getElementById('amigo');
 const listaElement = document.getElementById('listaAmigos');
 const resultadoElement = document.getElementById('resultado');
 
+inputName.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        adicionarAmigo();
+    }
+});
+
 function adicionarAmigo() {
     const nome = inputName.value.trim();
     if (!nome) {
